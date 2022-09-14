@@ -1,0 +1,1 @@
+Was bored and wanted to be able to read xkcd in full dark theme without my eyes hurting, this svelte site simply inverts the colors of the images when displaying them. Work in progress UI is a bit messy.
