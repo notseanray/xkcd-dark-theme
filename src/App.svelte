@@ -35,42 +35,44 @@
                 {current.news}
             </div>
         </div>
-        <div class="controls">
-            <button on:click|preventDefault={() => count.set(1)}>
-                First
-            </button>
-            <button on:click|preventDefault={() => {
-                if ($count > 10) {
-                    count.set($count - 10);
-                }
-            }}>
-                Go back 10
-            </button>
-            <button on:click|preventDefault={() => {
-                if ($count > 1) {
-                    count.decrement();
-                }
-            }}>
-                Previous
-            </button>
-            <a href={`https://xkcd.com/${current.num}`} target="_blank">original</a>
-            <button on:click|preventDefault={() => {
-                if ($count < max) {
-                    count.increment();
-                }
-            }}>
-                Next
-            </button>
-            <button on:click|preventDefault={() => {
-                if ($count <= max - 10) {
-                    count.set($count + 10);
-                }
-            }}>
-                Go forward 10
-            </button>
-            <button on:click|preventDefault={count.set(max)}>
-                Last
-            </button>
+        <div class="centered">
+            <div class="controls">
+                <button on:click|preventDefault={() => count.set(1)}>
+                    First
+                </button>
+                <button on:click|preventDefault={() => {
+                    if ($count > 10) {
+                        count.set($count - 10);
+                    }
+                }}>
+                    Go back 10
+                </button>
+                <button on:click|preventDefault={() => {
+                    if ($count > 1) {
+                        count.decrement();
+                    }
+                }}>
+                    Previous
+                </button>
+                <a href={`https://xkcd.com/${current.num}`} target="_blank">original</a>
+                <button on:click|preventDefault={() => {
+                    if ($count < max) {
+                        count.increment();
+                    }
+                }}>
+                    Next
+                </button>
+                <button on:click|preventDefault={() => {
+                    if ($count <= max - 10) {
+                        count.set($count + 10);
+                    }
+                }}>
+                    Go forward 10
+                </button>
+                <button on:click|preventDefault={count.set(max)}>
+                    Last
+                </button>
+            </div>
         </div>
         <!-- <input type="number"> </input> -->
     {/if}
@@ -85,6 +87,10 @@
     .controls {
         bottom: 2em;
         position: absolute;
+        justify-content: center;
+    }
+    .centered {
+        display: flex;
         justify-content: center;
     }
     .xkcd {
@@ -102,6 +108,7 @@
         text-align: center;
         color: blue;
         display: flex;
+        justify-content: center;
     }
 
     @media (min-width: 640px) {
