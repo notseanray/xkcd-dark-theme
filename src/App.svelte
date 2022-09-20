@@ -25,7 +25,11 @@
             {current.title} (#{current.num})
         </div>
         <div class="xkcd">
-            <img decoding="async" src={current.img} alt={current.alt} />
+            <div class="comic-wrapper">
+                <div class="comic-image">
+                    <img decoding="async" src={current.img} alt={current.alt} />
+                </div>
+            </div>
             <br />
             <div class="extra">
                 {current.alt}
@@ -81,12 +85,11 @@
 <style>
     main {
         text-align: center;
-        max-width: 240px;
+        max-width: 50%;
         color: white;
     }
     .controls {
-        bottom: 2em;
-        position: absolute;
+        position: fixed;
         justify-content: center;
     }
     .centered {
@@ -97,10 +100,20 @@
        -webkit-filter: invert(1);
        filter: invert(1);
    }
-    .comic-title {
+   .comic-wrapper {
+        display: flex;
+        justify-content: center;
+   }
+   .comic-image {
+        display: flex;
+        justify-content: center;
+       max-width: 500px;
+       max-height: 500px;
+   }
+   .comic-title {
         color: #ff3e00;
-        font-size: 4em;
-        font-weight: 150;
+        font-size: 1rem;
+        font-weight: 300;
         margin-bottom: 5px;
         margin-top: 5px;
     }
